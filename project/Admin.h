@@ -23,7 +23,7 @@ public:
         : userName(un), password(pw), fullName(fn), email(em), phoneNumber(pn) {
     }
 
-    // xem danh s�ch gi?ng vi�n v� sinh vi�n
+    // xem danh sách giảng viên và sinh viên
     void viewAccountUser(const vector<Lecturer>& lecturersDB, const vector<Student>& studentsDB)
     {
         cout << "\n--- Lecturers ---\n";
@@ -37,7 +37,7 @@ public:
     }
 
 
-    // t?o t�i kho?n gi?ng vi�n ho?c sinh vi�n m?i
+    // tạo tài khoản giảng viên hoặc sinh viên mới
     void createUserAccount(vector<Lecturer>& lecturersDB, vector<Student>& studentsDB, const string& lecturersCsvPath, const string& studentsCsvPath) {
         cout << "Create (1) Lecturer or (2) Student: ";
         int type; cin >> type;
@@ -80,7 +80,7 @@ public:
         }
     }
 
-    //ch?nh s?a th�ng tin gi?ng vi�n ho?c sinh vi�n
+    //chỉnh sửa thông tin giảng viên hoặc sinh viên
     void editUser(vector<Lecturer>& lecturersDB, vector<Student>& studentsDB) {
         cout << "Edit (1) Lecturer or (2) Student: ";
         int type;
@@ -193,7 +193,7 @@ public:
         else { cout << "Invalid type.\n"; }
     }
 
-    // t?o l?p h?c m?i
+    // tạo lớp học mới
     void createClassAndSave(vector<ClassRoom>& classesDB, const string& classesCsvPath) {
         ClassRoom c;
         cout << "Class ID: ";
@@ -206,7 +206,7 @@ public:
         cout << "Class created and saved!\n";
     }
 
-    // ch?nh s?a l?p h?c
+    // chỉnh sửa lớp học
     void editClass(vector<ClassRoom>& classesDB) {
         cout << "Enter Class ID to edit: ";
         string cid;
@@ -239,7 +239,7 @@ public:
         }
     }
 
-    // th�m gi?ng vi�n ho?c sinh vi�n v�o l?p h?c
+    // thêm giảng viên hoặc sinh viên vào lớp học
     void addMemberToClass(vector<ClassRoom>& classesDB, const vector<Lecturer>& lecturersDB, const vector<Student>& studentsDB) {
         cout << "Enter Class ID: ";
         string cid;
@@ -314,7 +314,7 @@ public:
         }
     }
 
-    // l�u tr? d? li?u
+    // lưu dữ liệu giảng viên, sinh viên vào file
     void saveLecturersToCsv(const vector<Lecturer>& lecturersDB, const string& path)
     {
         ofstream f(path.c_str());
@@ -352,6 +352,7 @@ public:
         f.close();
     }
 
+    // load dữ liệu giảng viên, sinh viên từ fie
     void loadLecturersFromCsv(vector<Lecturer>& lecturersDB, const string& path) {
         ifstream f(path.c_str());
         if (!f.is_open())
@@ -401,6 +402,7 @@ public:
         f.close();
     }
 
+    // lưu lớp đã tạo vào file
     void saveClassesToCsv(const vector<ClassRoom>& classesDB, const string& path) {
         ofstream f(path.c_str());
         if (!f.is_open())
@@ -430,6 +432,7 @@ public:
         f.close();
     }
 
+// load lớp đã tạo từ file
     void loadClassesFromCsv(vector<ClassRoom>& classesDB, const string& path) {
         ifstream f(path.c_str());
         if (!f.is_open())
@@ -466,7 +469,7 @@ public:
         f.close();
     }
 
-    // reset password khi ��ng nhap th?t b?i
+    // reset password khi đăng nhập thất bại
     void resetPassword(vector<Lecturer>& lecturersDB, vector<Student>& studentsDB,
         const string& lecturersCsvPath, const string& studentsCsvPath) {
         cout << "Reset password for (1) Lecturer or (2) Student: ";
