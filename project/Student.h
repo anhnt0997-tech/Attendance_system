@@ -22,7 +22,7 @@ public:
     // SV tự điểm danh
     void selfAttendance(vector<AttendanceRecord>& attendanceDB, const vector<ClassRoom>& classesDB) const
     {
-        
+        vector<int> myClasses;
         //Tìm các lớp mà sinh viên đang học 
         for (int i = 0; i < classesDB.size(); i++)
         {
