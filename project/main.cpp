@@ -65,12 +65,6 @@ void ClassRoom::display(const vector<Lecturer>& allLecturers, const vector<Stude
                     break;
                 }
             }
-            for (int k = 0;k<allstudents.size();k++{
-                if(allstudents[k].studentId == students[i]{
-                    studentName = allstudents[k].fullName;
-                    studentEmail = allstudents[k].email;
-                    break;
-                }
              cout << right << (i + 1) << ") " << lecturers[i]<< " - " << setw(30) << lecturerName << "\t\tEmail: " << lecturerEmail << "\n";
              cout << endl;
         }
