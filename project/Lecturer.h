@@ -26,10 +26,10 @@ public:
         cout << "\n=== My Class ===\n";
         bool hasClasses = false;
 
-        for (size_t i = 0; i < classesDB.size(); i++) {
+        for (int i = 0; i < classesDB.size(); i++) {
             bool mine = false;
             // Kiểm tra xem giảng viên này có phụ trách lớp không
-            for (size_t j = 0; j < classesDB[i].lecturers.size(); j++) {
+            for (int j = 0; j < classesDB[i].lecturers.size(); j++) {
                 if (classesDB[i].lecturers[j] == lecturerId) {
                     mine = true;
                     break;
@@ -56,9 +56,9 @@ public:
     {
         // chọn lớp cần điểm danh
         vector<int> IndexOfStudent;
-        for (size_t i = 0; i < classesDB.size(); i++)
+        for (int i = 0; i < classesDB.size(); i++)
         {
-            for (size_t j = 0; j < classesDB[i].lecturers.size(); j++)
+            for (int j = 0; j < classesDB[i].lecturers.size(); j++)
             {
                 if (classesDB[i].lecturers[j] == lecturerId)
                 {
@@ -73,7 +73,7 @@ public:
             return;
         }
         cout << "Select class: \n";
-        for (size_t k = 0; k < IndexOfStudent.size(); k++)
+        for (int k = 0; k < IndexOfStudent.size(); k++)
         {
             cout << (k + 1) << ") " << classesDB[IndexOfStudent[k]].classId << " - " << classesDB[IndexOfStudent[k]].className << endl;
         }
@@ -91,7 +91,7 @@ public:
             return;
         }
         cout << "Students: \n";
-        for (size_t i = 0; i < selected.students.size(); i++)
+        for (int i = 0; i < selected.students.size(); i++)
         {
             cout << (i + 1) << ") " << selected.students[i] << endl;
         }
@@ -115,7 +115,7 @@ public:
     void viewAttendance(const vector<AttendanceRecord>& attendanceDB) const
     {
         cout << "\nAttendance records:\n";
-        for (size_t i = 0; i < attendanceDB.size(); i++)
+        for (int i = 0; i < attendanceDB.size(); i++)
         {
             cout << attendanceDB[i].studentId << ", Class: " << attendanceDB[i].classId << ", Status: " << attendanceDB[i].status << endl;
         }
