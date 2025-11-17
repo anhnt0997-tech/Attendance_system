@@ -52,11 +52,11 @@ void ClassRoom::display(const vector<Lecturer>& allLecturers, const vector<Stude
         cout << "  (Hasn't Lecturer)\n";
     }
     else {
-        for (size_t i = 0; i < lecturers.size(); i++) {
+        for (int i = 0; i < lecturers.size(); i++) {
             string lecturerName = "No found name";
             string lecturerEmail = "No email";
             // Tìm thông tin giảng viên từ danh sách allLecturers
-            for (size_t j = 0; j < allLecturers.size(); j++) {
+            for (int j = 0; j < allLecturers.size(); j++) {
                 if (allLecturers[j].lecturerId == lecturers[i]) {
                     lecturerName = allLecturers[j].fullName;
                     lecturerEmail = allLecturers[j].email;
@@ -74,11 +74,11 @@ void ClassRoom::display(const vector<Lecturer>& allLecturers, const vector<Stude
         cout << "  (Has not student)\n";
     }
     else {
-        for (size_t i = 0; i < students.size(); i++) {
+        for (int i = 0; i < students.size(); i++) {
             string studentName = "No found name";
             string studentEmail = "No email";
             // Tìm thông tin sinh viên từ danh sách allStudents
-            for (size_t j = 0; j < allStudents.size(); j++) {
+            for (int j = 0; j < allStudents.size(); j++) {
                 if (allStudents[j].studentId == students[i]) {
                     studentName = allStudents[j].fullName;
                     studentEmail = allStudents[j].email;
@@ -259,7 +259,7 @@ int main()
                         }
                         else if (ac == 7)
                         {
-                            for (size_t i = 0;i < classesDB.size();i++)
+                            for (int i = 0;i < classesDB.size();i++)
                                 classesDB[i].display(lecturers, students);
                         }
                         else if (ac == 8)
