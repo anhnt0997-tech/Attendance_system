@@ -6,6 +6,7 @@
 #include "Student.h"
 #include "Class.h"
 #include "AttendanceRecord.h"
+#inchlude "iomanip"
 #include <locale>
 #include <codecvt> // cần cho xử lý Unicode
 using namespace std;
@@ -63,8 +64,8 @@ void ClassRoom::display(const vector<Lecturer>& allLecturers, const vector<Stude
                     break;
                 }
             }
-            cout << "  " << (i + 1) << ". " << lecturers[i] << " - " << lecturerName << "      Email: " << lecturerEmail << "\n";
-
+             cout << right << (i + 1) << ") " << lecturers[i]<< " - " << setw(30) << lecturerName << "\t\tEmail: " << lecturerEmail << "\n";
+             cout << endl;
         }
     }
 
@@ -85,7 +86,7 @@ void ClassRoom::display(const vector<Lecturer>& allLecturers, const vector<Stude
                     break;
                 }
             }
-            cout << "  " << (i + 1) << ". " << students[i] << " - " << studentName << "      Email: " << studentEmail << "\n";
+            cout << left  << (i + 1) << ") " << students[i]<< " - " << setw(30) << studentName << "\t\tEmail: " << studentEmail << "\n";
 
         }
     }
