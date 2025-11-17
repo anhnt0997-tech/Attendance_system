@@ -26,6 +26,7 @@ public:
         //Tìm các lớp mà sinh viên đang học 
         for (int i = 0; i < classesDB.size(); i++)
         {
+            // xem sinh viên có học lớp hiện tại hay không
             bool belong = false;
             for (int j = 0; j < classesDB[i].students.size(); j++) {
                 if (classesDB[i].students[j] == studentId)
@@ -62,6 +63,7 @@ public:
         string st;
         cin >> st;
         string recId = "rec" + to_string((int)attendanceDB.size() + 1);
+        //thêm bản ghi điểm danh vào csdl
         attendanceDB.push_back(AttendanceRecord(recId, studentId, classesDB[myClasses[choice - 1]].classId, st));
         cout << "Marked!\n";
     }
