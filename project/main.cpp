@@ -265,7 +265,7 @@ int main()
                         {
                             for (int i = 0;i < classesDB.size();i++)
                                 classesDB[i].display(lecturers, students);
-                        }g
+                        }
                         else if (ac == 8)
                         {
                             inAdmin = false;
