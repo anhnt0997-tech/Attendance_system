@@ -57,15 +57,15 @@ public:
         int type; cin >> type;
         if (type == 1) {
             Lecturer l;
-            cout << "Enter Lecturer ID: ";
-            cin >> l.lecturerId;
             cout << "Full name: ";
             cin.ignore();
             getline(cin, l.fullName);
             cout << "Email: ";
             getline(cin, l.email);
-            cout << "Phone: ";
+            cout << "Phone Number: ";
             getline(cin, l.phoneNumber);
+			cout << "Enter Lecturer username(ID): ";
+            cin >> l.lecturerId;
             cout << "Password: ";
             cin >> l.password;
             lecturersDB.push_back(l);
@@ -74,15 +74,16 @@ public:
         }
         else if (type == 2) {
             Student s;
-            cout << "Enter Student ID: ";
-            cin >> s.studentId;
+            
             cout << "Full name: ";
             cin.ignore();
             getline(cin, s.fullName);
             cout << "Email: ";
             getline(cin, s.email);
-            cout << "Phone: ";
+            cout << "Phone Number: ";
             getline(cin, s.phoneNumber);
+			cout << "Enter Student username(ID): ";
+            cin >> s.studentId;
             cout << "Password: ";
             cin >> s.password;
             studentsDB.push_back(s);
