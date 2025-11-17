@@ -14,7 +14,7 @@ public:
     string email;
     string phoneNumber;
     string password;
-    //cóntructor
+    //constructor
     Student(string sid = "student", string fn = "Student", string em = "student@mail.com", string pn = "012345", string pw = "123")
         : studentId(sid), fullName(fn), email(em), phoneNumber(pn), password(pw) {
     }
@@ -22,7 +22,7 @@ public:
     // SV tự điểm danh
     void selfAttendance(vector<AttendanceRecord>& attendanceDB, const vector<ClassRoom>& classesDB) const
     {
-        vector<int> myClasses;
+        
         //Tìm các lớp mà sinh viên đang học 
         for (int i = 0; i < classesDB.size(); i++)
         {
@@ -74,7 +74,7 @@ public:
         {
             if (attendanceDB[i].studentId == studentId)
             {
-               cout << "Class: " << attendanceDB[i].classId << ", Status: " << attendanceDB[i].status << endl;
+              
             }
         }
     }
