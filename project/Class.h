@@ -10,7 +10,7 @@ class Student;
 
 using namespace std;
 
-
+// Lớp đại diện cho một lớp học
 class ClassRoom {
 public:
     string classId;
@@ -19,14 +19,15 @@ public:
     vector<string> students; // studentId
     ClassRoom(string cid = "001", string cname = "CNTT") : classId(cid), className(cname) {}
 
+// Hiển thị thông tin chi tiết lớp học, kèm danh sách giảng viên và sinh viên
 
     void display(const vector<Lecturer>& allLecturers, const vector<Student>& allStudents) const;
-
+// Hiển thị thông tin cơ bản của lớp (id và tên)
     void displayBrief() const
     {
         cout << classId << " - " << className << endl;
     }
-
+// Thêm giảng viên vào lớp, tránh trùng lặp
     bool addLecturer(const string& lid)
     {
         if (find(lecturers.begin(), lecturers.end(), lid) == lecturers.end())
@@ -46,7 +47,7 @@ public:
         }
         return false;
     }
-
+// Xóa giảng viên khỏi lớp
     void removeLecturer(const string& lid)
     {
         vector<string> tmp;
@@ -56,7 +57,7 @@ public:
         }
         lecturers = tmp;
     }
-
+// Xóa sinh viên khỏi lớp
     void removeStudent(const string& sid)
     {
         vector<string> tmp;
