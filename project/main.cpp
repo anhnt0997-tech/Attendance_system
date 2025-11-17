@@ -186,7 +186,7 @@ int main()
                     }
                     else
                     {
-                        cout << "\nWrong. Remaining: " << (5 - tries) << endl;
+                        cout << "\nInvalid username or password. Remaining: " << (5 - tries) << endl;
                     }
                 }
                 else if (role == 2)
@@ -200,7 +200,7 @@ int main()
                         currentUserRole = 2;
                     }
                     else
-                        cout << "\nWrong. Remaining: " << (5 - tries) << endl;
+                        cout << "\nInvalid username or password. Remaining: " << (5 - tries) << endl;
                 }
                 else if (role == 3)
                 {
@@ -214,7 +214,7 @@ int main()
                     }
                     else
                     {
-                        cout << "\nWrong. Remaining: " << (5 - tries) << endl;
+                        cout << "\nInvalid username or password. Remaining: " << (5 - tries) << endl;
 
                     }
 
@@ -225,12 +225,13 @@ int main()
                 // MENU ADMIN
                 if (role == 1) {
                     Admin* a = findAdminById(id);
+                    cout << "Log in successfully as Admin" << endl;
                     bool inAdmin = true;
                     while (inAdmin) {
                         cout << "\n                         ============= [ADMIN] ============= \n";
                         cout << "1. View accounts               2. Create user account              3. Edit user\n";
                         cout << "\n4. Create a class              5. Edit class name                  6. Add member to class\n";
-                        cout << "\n7. View classes                8. Reset user password              9. Log out\n";
+                        cout << "\n7. View classes                8. Log out\n";
                         cout << "\nEnter your choice (number): ";
                         int ac;
                         cin >> ac;
@@ -264,12 +265,8 @@ int main()
                         {
                             for (int i = 0;i < classesDB.size();i++)
                                 classesDB[i].display(lecturers, students);
-                        }
+                        }g
                         else if (ac == 8)
-                        {
-                            a->resetPassword(lecturers, students, LEC_CSV, STU_CSV);
-                        }
-                        else if (ac == 9)
                         {
                             inAdmin = false;
                         }
@@ -282,6 +279,7 @@ int main()
                 // MENU LECTURER
                 else if (role == 2) {
                     Lecturer* l = findLecturerById(id);
+                    cout << "Log in successfully as Lecturer" << endl;
                     bool inLect = true;
                     while (inLect) {
                         cout << "\n                         ============= [LECTURER] =============\n";
@@ -316,6 +314,7 @@ int main()
                 // MENU STUDENT
                 else if (role == 3) {
                     Student* s = findStudentById(id);
+                    cout << "Log in successfully as Student" << endl;
                     bool inStu = true;
                     while (inStu) {
                         cout << "\n                         ============= [STUDENT] =============\n";
