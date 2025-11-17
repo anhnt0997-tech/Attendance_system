@@ -50,7 +50,7 @@ public:
     void removeLecturer(const string& lid)
     {
         vector<string> tmp;
-        for (size_t i = 0;i < lecturers.size();i++)
+        for (int i = 0;i < lecturers.size();i++)
         {
             if (lecturers[i] != lid) tmp.push_back(lecturers[i]);
         }
@@ -60,7 +60,7 @@ public:
     void removeStudent(const string& sid)
     {
         vector<string> tmp;
-        for (size_t i = 0;i < students.size();i++)
+        for (int i = 0;i < students.size();i++)
         {
             if (students[i] != sid) tmp.push_back(students[i]);
         }
