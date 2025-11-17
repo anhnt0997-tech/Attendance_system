@@ -23,6 +23,7 @@ public:
     void selfAttendance(vector<AttendanceRecord>& attendanceDB, const vector<ClassRoom>& classesDB) const
     {
         vector<int> myClasses;
+        //Tìm các lớp mà sinh viên đang học 
         for (int i = 0; i < classesDB.size(); i++)
         {
             bool belong = false;
@@ -38,12 +39,14 @@ public:
                 myClasses.push_back((int)i);
             }
         }
+        //Kiểm tra sinh viên có thuộc lớp nào hay không
         if (myClasses.size() == 0)
         {
             cout << "You don't have a class.\n";
             return;
         }
         cout << "Select class: \n";
+        //Hiển thị danh sách lớp để sinh viên chọn
         for (int k = 0; k < myClasses.size(); k++)
         {
             cout << (k + 1) << ") " << classesDB[myClasses[k]].classId << " - " << classesDB[myClasses[k]].className << endl;
@@ -71,7 +74,7 @@ public:
         {
             if (attendanceDB[i].studentId == studentId)
             {
-                cout << "Class: " << attendanceDB[i].classId << ", Status: " << attendanceDB[i].status << endl;
+              
             }
         }
     }
