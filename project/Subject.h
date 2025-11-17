@@ -24,7 +24,7 @@ public:
     {
         cout << "Subject " << subjectId << ": " << subjectName << " (Number of credits: " << creditNumber << ", GV: " << lecturerInCharge << ")\n";
         cout << "Class lists:";
-        for (const auto& cid : classList)
+        for (const string& cid : classList)
             cout << " - " << cid << "\n";
     }
     void showInfo() const {
